@@ -16,3 +16,5 @@ Maturing Dab Bot involves being able to configure:
 * The contents of it's dictionary
 
 I will be connecting Dab Bot to Jira to track feature requests and bug fixes. Please look forward to it.
+
+This project will begin on March 4, 2023.
