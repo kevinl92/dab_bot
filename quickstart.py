@@ -2,6 +2,7 @@ import discord
 import os
 from dotenv import load_dotenv
 import logging
+import random
 
 load_dotenv()
 
@@ -10,6 +11,8 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+
+f = open("links.txt").read().splitlines()
 
 @client.event
 async def on_ready():
@@ -25,6 +28,6 @@ async def on_message(message):
         #await message.reply('Hello!')
 
     if "dab" in message.content.lower():
-        await message.channel.send('https://tenor.com/view/squidward-dab-100-lit-gif-15118193')
+        await message.channel.send(random.choice(f))
 
 client.run(os.environ['BOT_TOKEN'], log_handler=handler, log_level=logging.INFO)
