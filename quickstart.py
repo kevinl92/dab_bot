@@ -27,30 +27,24 @@ async def on_message(message):
 
     # If the message came from a DM...
     if message.channel.type.name == 'private': 
-        # print('1')
         print('DM from '+ message.author.name + ' : ' + message.content)
         if message.author.id == int(os.environ['ADMIN_ID']):
             await message.channel.send('This was a DM from the Admin.')
 
         else:
-            await message.channel.send(message.author.name + ', you aren\'t an admin! We''ll pass your message along to Arfa.')
-            await admin.send(message.content)
+            await message.channel.send(message.author.name + ', you aren\'t an admin! We\'ll pass your message along to Arfa.')
+            await admin.send(message.author.name + ' DMed Dab_Bot: ' + message.content)
 
    # Otherwise, this came from a server...
     elif message.channel.type.name == 'text':
-        # print('2')
         print (message.guild.name + '/' + message.author.name + ':' + message.content)
-        # If the message starts with '$hello'
-        if message.content.startswith('$hello'):
-            await message.channel.send('Hello!')
 
         # If the message contains the word 'dab', case insensitive
         if "dab" in message.content.lower():
-            await message.channel.send(random.choice(open("links.txt").read().splitlines()))
+            await message.channel.send(random.choice(open("links.txt").read().splitlines()), delete_after=5.0)
     
-    # Otherwise, this is from a source we don't know about
+    # Otherwise, this is from a source we don't know about and don't know how to handle
     else:
-        # print('3')
         print ('Unknown origin: ' + message.content)
         return
 
