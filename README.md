@@ -18,3 +18,8 @@ Maturing Dab Bot involves being able to configure:
 I will be connecting Dab Bot to Jira to track feature requests and bug fixes. Please look forward to it.
 
 This project will begin on March 4, 2023.
+
+-----
+
+Stretch Goals:
+* Learn JS, design a web interface to administer the bot..?
