@@ -5,6 +5,7 @@ Dab Bot is a bot that will integrate in discord to provide endless entertainment
 
 In it's infancy, Dab Bot needs to be able to read and write messages from a discord server. It will initially only perform simple functionalities, including:
 * Mocking - Randomly repeating things that Jon says
+** ACTUALLY it should repeat, and replace every time he says "the" with "da"
 * Memeing - Randomly injecting memeworthy phrases unsolicited
 
 Eventually, it should:
